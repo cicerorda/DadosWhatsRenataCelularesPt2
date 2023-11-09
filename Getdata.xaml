@@ -6,7 +6,7 @@
     <x:Property Name="Cota" Type="InOutArgument(x:String)" />
     <x:Property Name="Versao" Type="InOutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1240,3882</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,3989</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -108,7 +108,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="788,3817" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="788,3924" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Dados" />
     </Sequence.Variables>
@@ -117,7 +117,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*Relatorio*" Folder="\\nas01\consorcio\publico\Administradora de Consórcios\Controles Internos\IV - Estrutura Operacional\Área Técnica\Automação RPA\RPA Dados Whats Renata" sap:VirtualizedContainerService.HintSize="726,3706" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="[&quot;*&quot;+Now.ToString(&quot;ddMMyyyy&quot;)+&quot;*&quot;]" Folder="\\nas01\consorcio\publico\Administradora de Consórcios\Controles Internos\IV - Estrutura Operacional\Área Técnica\Automação RPA\RPA Dados Whats Renata" sap:VirtualizedContainerService.HintSize="726,3802" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -126,21 +126,21 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692,3456" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692,3543" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="630,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CurrentFile.Name]" />
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630,3121" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="630,101" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[CurrentFile.Name]" />
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630,3179" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ReadCsvFile DataTable="[dt_Dados]" Delimitator="Semicolon" DisplayName="Read CSV" FilePath="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="568,154" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
-              <ui:CommentOut sap2010:Annotation.AnnotationText="read xlsx" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="568,83" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:ReadCsvFile DataTable="[dt_Dados]" Delimitator="Semicolon" DisplayName="Read CSV" FilePath="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="568,163" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
+              <ui:CommentOut sap2010:Annotation.AnnotationText="read xlsx" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="568,92" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
@@ -165,15 +165,15 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="568,2499" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="568,2519" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Dados]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,2271" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Dados]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,2282" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,2156" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,2158" sap2010:WorkflowViewState.IdRef="Sequence_2">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="numeroCota" />
                           </Sequence.Variables>
@@ -182,7 +182,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[numeroCota]</OutArgument>
                             </Assign.To>
@@ -190,8 +190,8 @@
                               <InArgument x:TypeArguments="x:String">[Row(0).ToString.Trim]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;numeroCota - &quot;+numeroCota]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,101" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;numeroCota - &quot;+numeroCota]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[Celular]</OutArgument>
                             </Assign.To>
@@ -423,16 +423,16 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Celular Correto: &quot;+Celular]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Celular Correto: &quot;+Celular]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[row(3)]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:Object">[Celular]</InArgument>
+                              <InArgument x:TypeArguments="x:Object">["55"+Celular]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:CommentOut sap2010:Annotation.AnnotationText="write xlsx" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                          <ui:CommentOut sap2010:Annotation.AnnotationText="write xlsx" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,247" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -484,9 +484,9 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:WriteCsvFile AddHeaders="False" DataTable="[dt_Dados]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="568,154" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="False" />
+              <ui:WriteCsvFile AddHeaders="False" DataTable="[dt_Dados]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="568,163" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="False" />
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="630,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="630,61" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="500,528" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
